@@ -46,13 +46,13 @@ void calculator::run() {
 }
 
 double calculator::add(double num1, double num2) {
-	int sum = 0;
+	double sum = 0;
 	sum = num1 + num2;
 	return sum;
 }
 
 double calculator::subtrack(double num1, double num2) {
-	int sum = 0;
+	double sum = 0;
 	sum = num1 - num2;
 	return sum;
 }
