@@ -7,6 +7,9 @@ calculator::calculator() {
 
 void calculator::run() {
 	bool running = true;
+	bool firstRun = true;
+	double result = 0;
+
 	while (running) {
 		std::cout << "\nDo you want to add(1), subtrack(2), divide(3), multiply(4) or quit(0)?\n";
 		int userInput = 0;
@@ -15,56 +18,79 @@ void calculator::run() {
 			running = false;
 			break;
 		}
-		double num1, num2;
-		std::cout << "Enter 2 numbers: \n";
-		std::cin >> num1;
-		std::cin >> num2;
-		system("cls");
+		if (firstRun == true) {
+			double num1, num2;
+			std::cout << "Enter 2 numbers: \n";
+			std::cin >> num1;
+			std::cin >> num2;
+			system("cls");
 
-		switch (userInput) {
-		case 1:
-			std::cout << (add(num1, num2)) << "\n";
-			break;
+			switch (userInput) {
+			case 1:
+				result = add(num1, num2);
+				break;
 
-		case 2:
-			std::cout << (subtrack(num1, num2)) << "\n";
-			break;
+			case 2:
+				result = subtract(num1, num2);
+				break;
 
-		case 3:
-			std::cout << (divide(num1, num2)) << "\n";
-			break;
+			case 3:
+				result = divide(num1, num2);
+				break;
 
-		case 4:
-			std::cout << (multiply(num1, num2)) << "\n";
-			break;
+			case 4:
+				result = multiply(num1, num2);
+				break;
 
-		case 0:
-			running = false;
-			break;
+			case 0:
+				running = false;
+				break;
+			}
+			firstRun = false;
+			std::cout << result << "\n";
+		}
+		else {
+			double num2;
+			std::cout << "Enter a number: \n";
+			std::cin >> num2;
+			system("cls");
+
+			switch (userInput) {
+			case 1:
+				result = add(result, num2);
+				break;
+			case 2:
+				result = subtract(result, num2);
+				break;
+			case 3:
+				result = divide(result, num2);
+				break;
+			case 4:
+				result = multiply(result, num2);
+				break;
+			case 0:
+				running = false;
+				break;
+			}
+			std::cout << result << "\n";
 		}
 	}
 }
 
+
+//Helper functions
 double calculator::add(double num1, double num2) {
-	double sum = 0;
-	sum = num1 + num2;
-	return sum;
+	return num1 + num2;
 }
 
-double calculator::subtrack(double num1, double num2) {
-	double sum = 0;
-	sum = num1 - num2;
-	return sum;
+double calculator::subtract(double num1, double num2) {
+	return num1 - num2;
 }
 
 double calculator::divide(double num1, double num2) {
-	double sum = 0;
-	sum = num1 / num2;
-	return sum;
+	return num1 / num2;
 }
 
 double calculator::multiply(double num1, double num2) {
-	double sum = 0;
-	sum = num1 * num2;
-	return sum;
+	return num1 * num2;
 }
