@@ -1,12 +1,10 @@
 # BasicCalculator
 Basic Calculator in C++
 
-Version .7 CalCalculator
+Version .8 CalCalculator
 
-Working 4 basic functions
+Working 4 basic functions with ability to continue with pervious number, and modularized correctly
 
-# Functions need to be added in a calculator
-History(able to chose the last number to continue work)
 
 # Unit testing
 After first design of the CalCalculator, have unit tests in place to make sure that the calculator gets the results that you want, think of every possible edge case
