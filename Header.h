@@ -6,8 +6,10 @@ class calculator {
 public:
 	calculator();
 	void run();
+	void firstRun(double& result);
+	void secondRun(double& result);
 	double add(double num1, double num2);
-	double subtrack(double num1, double num2);
+	double subtract(double num1, double num2);
 	double divide(double num1, double num2);
 	double multiply(double num1, double num2);
 };
