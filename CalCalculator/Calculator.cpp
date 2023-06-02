@@ -14,7 +14,6 @@ void calculator::run() {
 	}
 }
 
-
 //Helper functions
 void calculator::firstRun(double& result) {
 	std::cout << "\nDo you want to add(1), subtrack(2), divide(3), multiply(4) or quit(0)?\n";
